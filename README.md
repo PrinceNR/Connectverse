@@ -3,8 +3,13 @@ This API handles various administrative tasks such as admin creation, login, OTP
 The API uses MongoDB as its database for storing data and includes an .env file for easy configuration.
 
 step 1 : clone the repository
+
+
 step 2 : install node package manager (npm i)
-step 3 : You are ready to check the functionality of this api using thunderclient or postman or any other tool like this.. 
+
+
+step 3 : You are ready to check the functionality of this API using tools like Thunder Client, Postman, or any other API testing tool.
+
 
 api : http://localhost:5010/admin/
 
