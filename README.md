@@ -5,7 +5,7 @@ The API uses MongoDB as its database for storing data and includes an .env file 
 step 1 : clone the repository
 
 
-step 2 : install node package manager (npm i)
+step 2 : install node package manager ( npm install )
 
 
 step 3 : You are ready to check the functionality of this API using tools like Thunder Client, Postman, or any other API testing tool.
