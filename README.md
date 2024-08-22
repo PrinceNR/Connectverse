@@ -10,29 +10,36 @@ api : http://localhost:5010/admin/
 
 API- End points  :
 
-1 Router : /signup(post)  :  Description: Create a new admin by providing their details.
+1 Router : /signup(post)  :  Create a new admin by providing their details.
+
                              Request Body: (sample format)
+                             
                                       {
                                         "name": "adminName",
                                         "email": "adminemail@gmail.com",
                                         "password": "admin"
                                       }
+                                      
                               Response( if it success) :{   "message": "Otp sent successfully"  }
                               The OTP is logged in the console for verification purposes
                               
-2 Router : /otp(post) : Description : Verify the OTP sent to the admin's email . 
+2 Router : /otp(post) :  Verify the OTP sent to the admin's email . 
+
                         Request Body: (sample format)
                         {  "otp": "785656" }
                         
 
-3 Router : /image(post) (Optional) : Description: Upload an admin profile picture. The image is stored locally, and the filename is returned in the response. 
+3 Router : /image(post) (Optional) :  Upload an admin profile picture. The image is stored locally, and the filename is returned in the response.
+
                                       *This route is not fully implemented and is intended to be used with a frontend for complete functionality.
 
-4 Router : /login(post) :  Description: Log in an admin using their email and password.
+4 Router : /login(post) : Log in an admin using their email and password.
+
                          Request Body: (sample format)  {     "email": "adminemail@gmail.com",
                                                                "password": "admin" 
                                                         }
                          Response: If successful, a JWT token is generated and stored in cookies.
+                         
 5 Router : /logout(delete) :  Log out an admin by clearing the JWT token from the cookies.
 
 
