@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const {createAdmin, loginAdmin, logOutAdmin } = require('../controller/admin.controller')
+const {createAdmin, verifyOtp, loginAdmin, logOutAdmin , profileImage} = require('../controller/adminController')
+const uploads = require('../config/multer')
 
 router.post('/signup', createAdmin)
+router.post("/otp",verifyOtp)
+router.post("/image", profileImage)
 router.post('/login', loginAdmin)
 router.delete('/logout', logOutAdmin);
 

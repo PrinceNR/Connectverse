@@ -15,11 +15,14 @@ const createSchema = mongoose.Schema(
     password: {
         type : String,
         required : [true, "Password required"]
+    },
+    image : {
+        type : String,
+        default : 'default-avatar.png'
     }
 },
     {
         Timestamp : true
-        
     }
 )
  
