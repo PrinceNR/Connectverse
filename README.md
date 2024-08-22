@@ -29,9 +29,8 @@ API- End points  :
                         {  "otp": "785656" }
                         
 
-3 Router : /image(post) (Optional) :  Upload an admin profile picture. The image is stored locally, and the filename is returned in the response.
-
-                                      *This route is not fully implemented and is intended to be used with a frontend for complete functionality.
+3 Router : /image(post) (Optional) :  Upload an admin profile picture. The image is stored locally, and the filename is returned in the respons
+                                    *This route is not fully implemented and is intended to be used with a frontend for complete functionality.
 
 4 Router : /login(post) : Log in an admin using their email and password.
 
