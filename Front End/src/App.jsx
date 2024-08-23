@@ -3,7 +3,7 @@ import "./App.css";
 import googleIcon from "./assets/chrome-bg.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faKey , faEnvelope} from '@fortawesome/free-solid-svg-icons'
-
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
   
@@ -16,16 +16,21 @@ function App() {
   const handleModal = () => {
     setModal(!modal);
   };
-  const [formData, setFormData] = useState({
+
+  const formData = {
     name: name,
     email: email,
-    password: password,
-  });
+    password: password
+  }
+  let signData = {
+    email: email,
+    password: password
+  }
+  
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
     setError({...error, email: ""});
-
   }
   const handlePassword = (e) => {
     setPassword(e.target.value);
@@ -42,6 +47,50 @@ function App() {
     email : "",
     password : "",
   })
+
+  function validation() {
+    let isValid = true;
+    if (!formData.email) {
+      setError({...error, name: "Email is required.." });
+      isValid = false;        
+    }else if(formData.email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+        if (emailRegex.test(formData.email)) {
+          setError({...error, name: "" }); // Valid email
+        } else {
+          setError({...error, name: "Enter valid Email" });
+          isValid = false;   // Invalid email
+        }
+    }
+    if (!formData.password) {
+      setError({...error, password: "Password is required" });
+      isValid = false;
+    }
+
+    return isValid;
+  }
+  const handleSubmit = (e) => {
+    if (validation()) {
+    }
+    console.log(formData);
+    setModal(false);
+  }
+  function handleSignUp(e) {
+    e.preventDefault();
+    if (validation()) {
+      
+    }
+
+
+  }
+  function handleLogin(){
+    if (validation()) {
+
+
+    }
+
+  }
 
 
 
@@ -77,8 +126,8 @@ function App() {
             <label htmlFor="remember-me">Remember me</label>
           </div>
           {
-            modal ?  <button type="submit" className="btn primary outln-btn">Signup</button> 
-                   : <button type="submit" className="btn primary">  Login </button>
+            modal ?  <button type="submit" className="btn primary outln-btn" onClick={handleSignUp}>Sign UP</button> 
+                   : <button type="submit" className="btn primary" onClick={handleLogin}>  Login </button>
           } 
 
          
